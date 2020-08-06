@@ -61,4 +61,4 @@ class mailpushing():
                 print('!!MAİL GÖNDERİLDİ')
 
 
-# mailpushing('Doğuhan Aybars Ay','doguhanaybars71@gmail.com','Aybars1071.','doguhanaybars71@gmail.com','class deneme','içerik',2)
+# mailpushing('Doğuhan Aybars Ay','ornekmail@gmail.com','Password.','Karsımail@gmail.com','class deneme','içerik',2)
