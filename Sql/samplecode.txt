@@ -21,3 +21,38 @@ Select Max(UnitPrice) from Products
 Select Avg(UnitPrice) from Products --ORTALAMA
 Select Sum(UnitPrice * Quantity) as Kazanç from [Order Details]
 Select Rand()
+
+Select left('Doguhan Aybars' , 3) --Metinin solundan 3 karakter al
+Select left(ProductName,3)from Products
+Select right(ProductName,3)from Products--Metinin sağından 3 karakter al
+
+Select LEN('aybars') --Karakter sayısını verir
+Select ProductName , LEN(ProductName) as Karakter from Products
+
+Select LOWER('AyBaRS')--küçük harfe çevirir
+Select UPPER('AyBaRS')--büyük harfe çevirir
+
+Select TRIM('           aybars    ') --baştaki sondaki boşlukları atar
+LTRIM --baştaki  boşlukları atar
+RTRIM --sondaki boşlukları atar
+Select * from Products where TRIM( ProductName = 'Chai')
+
+Select * from Products where LEN(ProductName) > 10
+
+Select REVERSE('aybars') --metni ters yazar
+
+Select CHARINDEX('a','doguhan aybars',1)--1 den başlayarak metinde a harfi varmı
+
+Select ProductName from Products where CHARINDEX(' ',ProductName,1) > 0
+
+Select REPLACE('DOGUHAN AYBARS',' ','_') --BOŞLUK YERİNE _ KULLANIR
+
+Select REPLACE(ProductName,' ','_') from Products 
+
+Select SUBSTRING('DOGUHAN AYBARS',1,5) --1 DEN İTİBAREN 5 E KADAR PARÇALA
+
+Select ASCII('A') --SAYISAL DEĞERİNİ VERİR
+
+Select Char(65) --ASCII KODUN KLAVYE KARŞILIĞINI VERİR
+
+
