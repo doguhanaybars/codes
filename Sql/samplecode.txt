@@ -56,3 +56,83 @@ Select ASCII('A') --SAYISAL DEĞERİNİ VERİR
 Select Char(65) --ASCII KODUN KLAVYE KARŞILIĞINI VERİR
 
 
+
+Select distinct(Country) from Customers --aynı isimleri 1 kez getirir
+
+Select distinct Country,City from Customers order by Country
+
+Select Country,Count(*) as adet from Customers group by Country
+
+Select Country,Count(*) as adet from Customers group by Country having Count(*)>1
+
+Select Country,Count(*) as adet from Customers group by Country having Count(*)>1 order by Country
+
+Select * from Products inner join Categories on Products.CategoryID = Categories.CategoryID -- şarta uyan eşleşenleri getirir
+
+Select * from Products inner join Categories on Products.CategoryID = Categories.CategoryID where Products.UnitPrice>20 order by Products.CategoryID
+
+Select p.ProductName,o.OrderDate,od.Quantity * od.UnitPrice as Total
+from Products as p inner Join [Order Details] as od 
+on p.ProductID = od.ProductID 
+inner join Orders as o 
+on o.OrderID = od.OrderID
+order by p.ProductName,o.OrderDate
+
+Select * from Products as p left join [Order Details] as od 
+on p.ProductID = od.ProductID
+where od.ProductID is null
+
+Select * from Customers as c left join Orders as o  --solunda olup sağında olmayan
+on c.CustomerID=o.CustomerID
+where o.CustomerID is null
+
+Select * from Orders as o right join Customers as c -- sağında olup solunda olmayan
+on o.CustomerID = c.CustomerID
+where o.CustomerID is null
+
+Select * from Customers as c full join Orders as o -- Kesişsin kesişmesin hepsini kapsar
+on o.CustomerID = c.CustomerID
+
+Select * from Categories
+
+insert into Categories(CategoryName,Description)   --Ekleme yapmak için
+values ('Test Category','Test Category Description')
+
+Select * from Categories
+
+insert into [Order Details] values(10248,12,12,10,0)
+
+Select * from [Order Details]
+
+update Categories set CategoryName = 'Test category2' --Güncelleme yapmak için
+where CategoryID=9
+
+Select * from Categories
+
+delete from Categories where CategoryID = 9  -- silme işlemi için
+
+Select * from Categories
+
+Select * from CustomersWork 
+
+insert into CustomersWork (CustomerId,CompanyName,ContactName) --CustomersWorke ekler
+select CustomerId,CompanyName,ContactName from Customers
+where ContactName like '%en%'
+
+Select * from CustomersWork 
+
+update Customers set CompanyName = CustomersWork.CompanyName   --Şarta uyanlara göre güncelle
+from Customers inner join CustomersWork 
+on Customers.CustomerID = CustomersWork.CustomerId
+where CustomersWork.CompanyName like '%TEST%'
+
+Select * from Customers
+
+delete Customers												--şarta uygun olanı sil
+from Customers inner join CustomersWork 
+on Customers.CustomerID = CustomersWork.CustomerId
+where CustomersWork.CompanyName like '%TEST%'
+
+select CustomerID,CompanyName,ContactName from Customers		--tablo birleştir alt alta
+union --all														--ama sadece farklı olanları
+select * from CustomersWork
