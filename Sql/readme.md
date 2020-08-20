@@ -29,8 +29,9 @@ BEGIN
    COMMIT;
 END;
 <h2>Output Table</h2>
+...
 SQL> SELECT * FROM temp ORDER BY col1;
-
+...
 NUM_COL1 NUM_COL2  CHAR_COL
 -------- --------  ---------
        1      100  i is odd
