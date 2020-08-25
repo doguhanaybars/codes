@@ -1,0 +1,52 @@
+#------------------------------------------------------------------------------
+# Copyright (c) 2013, Nucleic Development Team.
+#
+# Distributed under the terms of the Modified BSD License.
+#
+# The full license is in the file LICENSE, distributed with this software.
+#------------------------------------------------------------------------------
+"""
+An example of the `SpinBox` widget.
+
+This example demonstrates the use of a simple `SpinBox` control which is
+used to select from a discrete range of integer values.
+
+<< autodoc-me >>
+"""
+from enaml.widgets.api import Window, Form, Label, Field, SpinBox, CheckBox
+from enaml.layout.api import hbox, vbox
+
+
+enamldef Main(Window):
+    title = 'Karaciğer Hastalığı Değerleri'
+    Form:
+        Label: lbl:
+            text = 'Hemoglobin değerini giriniz:'
+        SpinBox: sbox:
+            maximum = 100000
+            minimum = 0
+        Label: lbl2:
+            text = 'Hipertansiyon durumunuz:'
+        CheckBox: sbox2:
+            checked = False
+        Label: lbl3:
+            text = 'RBCC (Alyuvar Sayısı) değerini giriniz:'
+        SpinBox: sbox3:
+            maximum = 10000
+            minimum = 0
+        Label: lbl4:
+            text = 'BGR değerini giriniz:'
+        SpinBox: sbox4:
+            maximum = 1000000
+            minimum = 0
+        Label: lbl5:
+            text = 'SC (Orak Hücre Sayısı) değerini giriniz: '
+        SpinBox: sbox5:
+            maximum = 100000
+            minimum = 0
+        Field: fld:
+            if sbox.value > 
+            // text << u'Kronik Böbrek Hastası olma riskiniz: {}'.format(sbox.value)
+            text << 'Kronik Böbrek Hastası olma riskiniz: var'
+            read_only = True
+
