@@ -14,7 +14,7 @@ email.set_content(html.substitute({'name': 'Fırat'}), 'html')
 with smtplib.SMTP(host='smtp.gmail.com',port=587) as smtp:
     smtp.ehlo()
     smtp.starttls()
-    smtp.login('doguhanaybars71@gmail.com','Aybars1071.')
+    smtp.login('mailadresim','şifrem.')
     smtp.send_message(email)
     print('all good boos!')
     
