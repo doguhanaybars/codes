@@ -1,7 +1,7 @@
 from githubUserInfo import username, password
 from selenium import webdriver
 import time
-
+driver = webdriver.Chrome("C:/Users/Aybars/Documents/GitHub/codes/pythonCodes/selenium/chromedriver.exe")
 class Github:
     def __init__(self, username, password):
         self.browser = webdriver.Chrome()

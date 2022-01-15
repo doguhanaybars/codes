@@ -2,7 +2,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
 
-driver = webdriver.Chrome()
+driver = webdriver.Chrome("C:/Users/Aybars/Documents/GitHub/codes/pythonCodes/selenium/chromedriver.exe")
+
+
 
 url ="http://google.com"
 driver.get(url)
